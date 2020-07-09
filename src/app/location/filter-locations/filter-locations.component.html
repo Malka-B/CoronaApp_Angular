@@ -1,0 +1,37 @@
+
+<br><br>
+<div class="example-header">
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+</div>
+<mat-table class="table table-striped" [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="startDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Start Date </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.startDate}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="endDate">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> endDate </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.endDate}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="adress">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> adress </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.adress}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="city">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> city </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.city}} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="thArray"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: thArray;"> </mat-row>
+</mat-table>
+<br>
+<mat-paginator [length]="totalCount" [pageSize]="paginationModel.pageSize"
+    [pageSizeOptions]="paginationModel.selectItemsPerPage" (page)="switchPage($event)">
+</mat-paginator>
+<app-location-search-form (searchLocationEvent)="searchLocation($event)"></app-location-search-form> 
+<br><br><br><br><br><br>
+
+
+<!-- <mat-paginator [pageSizeOptions]="[5, 10, 15, 25]">
+</mat-paginator> -->

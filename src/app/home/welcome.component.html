@@ -1,0 +1,50 @@
+﻿<br><br>
+<h1>Hello Epidemiological Report</h1>
+
+ <br><br>
+<!--<form [formGroup]="loginForm">
+    <div class="input-group margin-bottom-sm">
+        <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw" aria-hidden="true"></i></span>
+        <input type="text" placeholder="User Name" formControlName="Username">
+    </div>
+    <br>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-key fa-fw" aria-hidden="true"></i></span>
+        <input type="password" placeholder="Password" formControlName="password">
+    </div>
+</form>
+<br>
+<div>
+    <button class="btn btn-primary" (click)="login()">
+        Login
+    </button>
+</div> -->
+
+
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center" >
+
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>Log in</mat-card-title>
+        </mat-card-header>
+<br><br>
+        <form class="example-form" [formGroup]="loginForm">
+            <mat-card-content>
+                <mat-form-field class="example-full-width">
+                    
+                    <input matInput placeholder="Username" formControlName="Username">
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    
+                    <input matInput placeholder="Password" formControlName="password">
+                </mat-form-field>
+            </mat-card-content>
+            <button mat-stroked-button color="accent" class="btn-block" (click)="login()">Log in</button>
+            <br>
+            <a class='nav-link' [routerLink]="['/register']">No account? Let's register now!</a>
+        </form>
+        
+    </mat-card>
+
+</div>

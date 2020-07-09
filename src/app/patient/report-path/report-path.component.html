@@ -1,0 +1,52 @@
+<br><br>
+<h1>Hello Epidemiological Report</h1>
+<h2>Report Your Path</h2>
+<h2>{{welcome}}</h2>
+
+<div>
+    <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label" for="patientId">Patient Id</label>
+        <div class="col-md-8">
+            <input class="form-control" #patientId id="patientId" type="text" placeholder="Patient Id"
+                (keyup.enter)="getLocationsById(patientId.value)" />
+        </div>
+    </div>
+</div>
+
+<div *ngIf="locationList">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th *ngFor='let th of thArray' scope="col">{{th}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let location of locationList'>
+                <td>{{location.startDate | date:'shortDate'}}</td>
+                <td>{{location.endDate | date:'shortDate'}}</td>
+                <td>{{location.city}}</td>
+                <td>{{location.adress}}</td>
+                <td>
+                    <button (click)="deleteDetails(location)">
+                        <i class="fa fa-trash fa-2x"></i>
+                    </button>
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)="editDetails(location)">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-primary mr-3" style="width:80px" (click)="save()">
+            Save
+        </button>
+    </div>
+    
+    <app-location-details [locationToEdit]="locationToEdit" (addLocationEvent)="addLocation($event)">
+    </app-location-details>
+
+</div>

@@ -1,0 +1,60 @@
+<div class="card-body">
+    <form [formGroup]="locationForm">
+
+        <div class="form-group row mb-2">
+            <!-- <mat-form-field appearance="fill">
+                <mat-label>Start Date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker> -->
+
+            <label class="col-md-2 col-form-label" for="startDateId">Start Date</label>
+            <div class="col-md-8">
+                <!-- <input class="form-control" id="startDateId" type="text" placeholder="Start Date (required)" required
+                        formControlName="startDate" /> -->
+                <input  id="startDateId" type="text" placeholder="Start Date (required)"
+                    formControlName="startDate" matInput [matDatepicker]="startDate">
+                <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                <mat-datepicker #startDate></mat-datepicker>
+            </div>
+            <!-- </mat-form-field> -->
+
+        </div>
+
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="endDateId">End Date</label>
+            <div class="col-md-8">
+                <input  id="endDateId" type="text" placeholder="End Date (required)"
+                    formControlName="endDate" matInput [matDatepicker]="endDate">
+                <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                <mat-datepicker #endDate></mat-datepicker>
+                <!-- <input class="form-control" id="endDateId" type="text" placeholder="End Date (required)" required
+                    formControlName="endDate" /> -->
+            </div>
+        </div>
+
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="cityId">city</label>
+            <div class="col-md-8">
+                <input class="form-control" id="cityId" type="text" placeholder="city (required)" required city
+                    formControlName="city" />
+
+            </div>
+        </div>
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="adressId">address</label>
+            <div class="col-md-8">
+                <input class="form-control" id="adressId" type="text" placeholder="address (required)"
+                    formControlName="adress" />
+
+            </div>
+        </div>
+
+        <div class="form-group row mb-2">
+            <div class="offset-md-2 col-md-4">
+                <button class="btn btn-primary mr-3" style="width:120px" (click)='addLocation()'> Add location</button>
+
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+<nav class='navbar navbar-expand navbar-light bg-light'>
+    <a class='navbar-brand'>Coronna App</a>
+    <ul class='nav nav-pills'>
+        <li><a class='nav-link' [routerLink]="['/welcome']">Home</a></li>
+        <li><a class='nav-link' [routerLink]="['/patient']">Patient - Report path</a></li>
+        <li><a class='nav-link' [routerLink]="['/locations']">Locations List</a></li>
+    </ul>
+</nav>
+
+<div class='container'>
+    <router-outlet></router-outlet>
+</div>

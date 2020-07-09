@@ -1,0 +1,64 @@
+<br>
+<h2>Let's filter from server!</h2>
+
+<div class="card-body">
+    <form [formGroup]="locationSearchForm">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Enter a date range</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input formControlName="startDate" matStartDate placeholder="Start date">
+              <input formControlName="endDate" matEndDate placeholder="End date">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+
+         
+        <!-- <div class="form-group row mb-2">
+            
+            <label class="col-md-2 col-form-label" for="startDateId">Start Date</label>
+            <div class="col-md-8">               
+                <input  id="startDateId" type="text" placeholder="Start Date "
+                    formControlName="startDate" matInput [matDatepicker]="startDate">
+                <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                <mat-datepicker #startDate></mat-datepicker>
+            </div>
+            
+
+        </div>
+
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="endDateId">End Date</label>
+            <div class="col-md-8">
+                <input  id="endDateId" type="text" placeholder="End Date "
+                    formControlName="endDate" matInput [matDatepicker]="endDate">
+                <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                <mat-datepicker #endDate></mat-datepicker>                
+            </div>
+        </div> -->
+
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="ageId">Age</label>
+            <div class="col-md-8">
+                <input class="form-control" id="ageId" type="text" placeholder="age" 
+                    formControlName="age" />
+
+            </div>
+        </div>
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="adressId">address</label>
+            <div class="col-md-8">
+                <input class="form-control" id="adressId" type="text" placeholder="address "
+                    formControlName="location" />
+            </div>
+        </div>
+
+        <div class="form-group row mb-2">
+            <div class="offset-md-2 col-md-4">
+                <button class="btn btn-primary mr-3" style="width:120px" (click)='searchLocation()'>search</button>
+
+            </div>
+        </div>
+    </form>
+</div>
